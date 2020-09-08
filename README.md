@@ -12,5 +12,5 @@ Input file is the fasta alignment (e.g. those in ./data_examples). Fasta alignme
 
 Run the script run_PH.sh. Outputfiles will be in the directory ./outs.*
 
-Predictions.rec.csv and predictions.RM.csv are ,respectively, tables with the recombination rates (p) and recombination/mutation (r/m) rates inferred along the sequence alignment.
+Predictions.rec.csv and predictions.RM.csv are, respectively, output tables with the recombination rates (p) and recombination/mutation (r/m) rates inferred along the sequence alignment.
 The second column is the alignment position where a given window ended. The third column is the inferred p (or r/m) for that window. Note that the inferred value for "window 0" is the overall rate inferred for the whole alignment.
