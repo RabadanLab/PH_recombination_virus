@@ -19,7 +19,7 @@ message("-------------------------------");
 
 						library('ape');
 
-#						library(pegas);
+
 alignment<-ape::read.dna(dataset, format="fasta");
 window=window_size;
 window=as.numeric(window);
@@ -35,7 +35,7 @@ mean_pwd<-c(mean_pwd,mean(ape::dist.dna(alignment,model="RAW",pairwise.deletion=
 max_pwd<-c(max_pwd,max(ape::dist.dna(alignment,model="RAW",pairwise.deletion=TRUE,as.matrix=TRUE)))
 number_of_sequences<-c(number_of_sequences,length(alignment[,1]))
 window_length<-c(window_length,length(alignment[1,]))
-#write.table(cbind(tajima,theta,mean(pwd),max(pwd),median(pwd)),file="tajimaX.csv",sep=",")
+
 
 
 
@@ -57,12 +57,10 @@ window_length<-c(window_length,length(alignment[1,]))
 				all_windows<-c(all_windows,w)
 				mean_pwd<-c(mean_pwd,mean(ape::dist.dna(alignment[,i:w],model="RAW",pairwise.deletion=TRUE,as.matrix=TRUE)))
 				max_pwd<-c(max_pwd,max(ape::dist.dna(alignment[,i:w],model="RAW",pairwise.deletion=TRUE,as.matrix=TRUE)))
-				#pwd<-ape::dist.dna(alignment[,i:w],model="RAW",pairwise.deletion=TRUE,as.matrix=TRUE)
-				#write.dna(alignment[,i:w],filename,format="fasta")
 				number_of_sequences<-c(number_of_sequences,length(alignment[,1]))
 				window_length<-c(window_length,window_size)
 
 				}
 				
-			write.table(cbind(all_windows,number_of_sequences,window_length,tajima,theta,mean_pwd,max_pwd),file="tajimaX.csv",sep="\t")				
+			write.table(cbind(all_windows,number_of_sequences,window_length,tajima,theta,mean_pwd,max_pwd),file="tajimaX.csv",sep="\t",row.names=FALSE)				
 		
